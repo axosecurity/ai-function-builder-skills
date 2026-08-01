@@ -372,6 +372,35 @@ h1 {
 .feature h3 { margin: 0.75rem 0 0.5rem; font-size: 1.1rem; }
 .feature p { color: var(--muted); font-size: 0.92rem; margin: 0; }
 
+/* --- Skill structure --- */
+.structure-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.structure-code pre { font-size: 0.85rem; }
+
+.structure-copy {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.structure-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.structure-item h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.structure-item h3 code { font-size: 0.9em; }
+.structure-item p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+@media (max-width: 900px) {
+  .structure-grid { grid-template-columns: 1fr; }
+}
+
 /* --- Tabs --- */
 .tabs {
   display: flex;

@@ -11,6 +11,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- How skills are structured -->
+  <url>
+    <loc>https://ai-function-builder-skills.axosolaman.online/#structure</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Skill catalog (section anchors on the landing page) -->
   <url>
     <loc>https://ai-function-builder-skills.axosolaman.online/#clerk-org-rbac</loc>

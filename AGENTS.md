@@ -6,7 +6,7 @@ This file is the **main prompt every agent working in this repository must obey*
 
 This repo (`axosecurity/ai-function-builder-skills`) is a curated, open-source collection of **production-ready AI skills** — reusable instruction packs that turn LLM coding agents (Claude Code, opencode, Cursor, etc.) into specialists for specific engineering tasks.
 
-- Each skill lives in `skills/<skill-name>/` as a `SKILL.md` (with YAML frontmatter) plus optional `references/` deep-dive docs.
+- Each skill lives in `skills/<skill-name>/` as a `SKILL.md` (with YAML frontmatter) plus a per-skill `README.md` that deeply documents its use case, and optional `references/` deep-dive docs.
 - Existing skills: `clerk-org-rbac`, `redis-token-bucket-rate-limiter`, `secure-file-upload`.
 - The public surface of the repo is `README.md` (catalog), `docs/INSTALLATION.md`, and the marketing site in `web/` (deployed to GitHub Pages at `ai-function-builder-skills.axosolaman.online`). The installer (`scripts/install.sh`) auto-discovers skills from the `skills/` directory — it does **not** need editing when a skill is added.
 
@@ -14,11 +14,12 @@ This repo (`axosecurity/ai-function-builder-skills`) is a curated, open-source c
 
 1. **`SKILL.md` frontmatter is required** — must contain at least `name` and `description`. The `name` **must match the folder name** exactly, or agents won't discover the skill.
 2. **Never commit `.skill` files** — they are gitignored (`*.skill`). They are only an *input* format (zip archives) that gets extracted.
-3. **Skills are security-first, reusable, and project-agnostic** — no hardcoded domain details in `SKILL.md`; put worked examples in `references/`.
-4. **Keep the README catalog in sync** — every skill must be listed. Never add a skill without updating the docs that reference it.
-5. **Keep the `web/` landing page in sync** — every skill must be represented on the marketing site. Never add a skill without adding it to `web/index.html`.
-6. **Do not commit secrets** — check env vars, keys, and tokens stay out of all files.
-7. **Do not commit unless the user explicitly asks.** When committing, use a concise message matching the repo style (see `git log`).
+3. **Every skill folder MUST contain a `README.md`** — a human-readable, deep dive into the skill's use case (when/why to use it, what problem it solves, how it works). The `SKILL.md` is for the agent; the `README.md` is for the humans browsing the repo.
+4. **Skills are security-first, reusable, and project-agnostic** — no hardcoded domain details in `SKILL.md`; put worked examples in `references/`.
+5. **Keep the README catalog in sync** — every skill must be listed. Never add a skill without updating the docs that reference it.
+6. **Keep the `web/` landing page in sync** — every skill must be represented on the marketing site. Never add a skill without adding it to `web/index.html`.
+7. **Do not commit secrets** — check env vars, keys, and tokens stay out of all files.
+8. **Do not commit unless the user explicitly asks.** When committing, use a concise message matching the repo style (see `git log`).
 
 ## Workflow: Adding a New Skill
 
@@ -53,9 +54,26 @@ Then **delete the `.skill` archive** from the repo root (it's gitignored; the ex
 - [ ] `description` explains **when to trigger** (scenarios, "use when the user asks…") and **what it implements**.
 - [ ] `references/` files are linked from `SKILL.md` (paths relative to the skill folder).
 - [ ] No `.skill` archive, `.DS_Store`, or temp files inside `skills/`.
-- [ ] Read the `SKILL.md` thoroughly and summarize the skill's purpose so the README entry is accurate — don't guess from the folder name.
+- [ ] Read the `SKILL.md` thoroughly and summarize the skill's purpose so the README entries are accurate — don't guess from the folder name.
 
-### 4. Update the README
+### 4. Write the skill's `README.md`
+
+Every skill folder MUST contain its own `README.md` — a human-readable deep dive into the skill's **use case**. This is separate from the top-level catalog README and is what humans browsing the repo see first.
+
+The skill `README.md` should explain, in depth:
+
+- **What problem the skill solves** and **when to use it** (and when not to).
+- **Why the skill exists** — the failure modes / pitfalls it prevents, and the architecture decisions it encodes.
+- **How it works** — the workflow, phases, or security model at a high level (point to `SKILL.md` and `references/` for implementation detail).
+- **What you get** — the artifacts/templates/checklists the skill produces.
+- **How to install & trigger it** — install command and a sample trigger prompt.
+- Links to the `SKILL.md` and `references/` files (relative paths from the skill folder).
+
+Then update the top-level README's **Skill Catalog** section to link to `skills/<skill-name>/README.md` as a **Key files** entry.
+
+> The `SKILL.md` is for the agent; the `README.md` is for the humans.
+
+### 5. Update the README
 
 In `README.md`, update **every** place skills are enumerated (see the [README conventions](#readme-conventions) below):
 
@@ -106,7 +124,6 @@ git status                                  # review staged files
 git commit -m "Add <skill-name> skill: <one-line summary>"
 git push origin main
 ```
-
 Match the commit style in `git log` (imperative, summarizes what the skill does). Never include the `.skill` archive in the commit. The push triggers the Pages workflow, which redeploys `web/` (including the new skill card).
 
 ## README Conventions
@@ -114,7 +131,7 @@ Match the commit style in `git log` (imperative, summarizes what the skill does)
 - Catalog entries are numbered sequentially (`1.`, `2.`, …). Insert the new skill after existing ones and re-number if the order changes.
 - `**Category:**` is a short label (e.g. `Auth & Authorization`, `Backend & API`).
 - `**Stack:**` lists frameworks/libraries the skill targets.
-- `**Key files:**` links relative paths from repo root, e.g. [`skills/<name>/SKILL.md`](skills/<name>/SKILL.md) · [`references/<file>.md`](skills/<name>/references/<file>.md).
+- `**Key files:**` links relative paths from repo root, e.g. [`skills/<name>/SKILL.md`](skills/<name>/SKILL.md) · [`skills/<name>/README.md`](skills/<name>/README.md) · [`references/<file>.md`](skills/<name>/references/<file>.md).
 - `**When to use:**` mirrors the skill's trigger description in plain language.
 - Keep tone consistent: bullet-driven, no fluff, security-first.
 

@@ -47,7 +47,7 @@
   }
 
   // Simple scroll-reveal (progressive enhancement; no-op if unsupported)
-  var reveal = document.querySelectorAll('.card, .feature');
+  var reveal = document.querySelectorAll('.card, .feature, .structure-item');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

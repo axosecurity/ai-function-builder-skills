@@ -95,8 +95,9 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
+        <li><a href="#what">Why</a></li>
+        <li><a href="#structure">Structure</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#why">Why</a></li>
         <li><a href="#install">Install</a></li>
         <li><a href="#contribute">Contribute</a></li>
         <li><a class="nav-cta" href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">GitHub</a></li>
@@ -181,8 +182,44 @@ description: Multi-tenant RBAC with
       </div>
     </section>
 
+    <!-- How a skill is structured -->
+    <section class="section section-alt" id="structure">
+      <div class="container">
+        <div class="section-head">
+          <h2>How a skill is structured</h2>
+          <p>Every skill is a self-contained folder with three layers — one for your agent, one for you, and one for the deep detail.</p>
+        </div>
+        <div class="structure-grid">
+          <div class="structure-code">
+<pre><code>skills/
+└── <span class="k">secure-file-upload</span>/
+    ├── <span class="r">SKILL.md</span>          <span class="c"># For the agent — triggers, workflow, checklist</span>
+    ├── <span class="r">README.md</span>         <span class="c"># For humans — deep use-case deep dive</span>
+    └── <span class="k">references/</span>
+        ├── architecture.md      <span class="c"># Sequence diagram + trade-offs</span>
+        ├── security-model.md    <span class="c"># 5-layer security model</span>
+        └── configuration.md     <span class="c"># Console setup + CORS</span></code></pre>
+          </div>
+          <div class="structure-copy">
+            <div class="structure-item">
+              <h3>SKILL.md — for the agent</h3>
+              <p>The instruction pack your AI agent reads. YAML frontmatter (<code>name</code> + <code>description</code>) tells the agent <em>when</em> to trigger; the body is the battle-tested workflow, security rules, and a self-check checklist it runs before showing you code.</p>
+            </div>
+            <div class="structure-item">
+              <h3>README.md — for you</h3>
+              <p>A human-readable deep dive into the skill's <strong>use case</strong>: the problem it solves, when to use it (and when not to), why the architecture is built that way, and what you get out of it.</p>
+            </div>
+            <div class="structure-item">
+              <h3>references/ — the deep detail</h3>
+              <p>Optional deep-dive docs loaded on demand — full security models, database schemas, SDK code samples, and console setup guides. Kept out of <code>SKILL.md</code> so the agent stays fast.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Skills catalog -->
-    <section class="section section-alt" id="skills">
+    <section class="section" id="skills">
       <div class="container">
         <div class="section-head">
           <h2>Skill catalog</h2>
@@ -264,7 +301,7 @@ description: Multi-tenant RBAC with
     </section>
 
     <!-- Why -->
-    <section class="section" id="why">
+    <section class="section section-alt" id="why">
       <div class="container">
         <div class="section-head">
           <h2>Why use these skills?</h2>
@@ -306,7 +343,7 @@ description: Multi-tenant RBAC with
     </section>
 
     <!-- Install -->
-    <section class="section section-alt" id="install">
+    <section class="section" id="install">
       <div class="container">
         <div class="section-head">
           <h2>Get started in minutes</h2>
@@ -355,7 +392,7 @@ cp -r skills/clerk-org-rbac ~/.claude/skills/</code></pre>
     </section>
 
     <!-- Contribute -->
-    <section class="section" id="contribute">
+    <section class="section section-alt" id="contribute">
       <div class="container">
         <div class="section-head">
           <h2>Built by developers, for developers</h2>
@@ -390,6 +427,7 @@ cp -r skills/clerk-org-rbac ~/.claude/skills/</code></pre>
       <div>
         <h4>Resources</h4>
         <ul>
+          <li><a href="#structure">How skills are structured</a></li>
           <li><a href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">Repository</a></li>
           <li><a href="https://github.com/axosecurity/ai-function-builder-skills/blob/main/docs/INSTALLATION.md" target="_blank" rel="noopener">Installation guide</a></li>
           <li><a href="https://github.com/axosecurity/ai-function-builder-skills/blob/main/AGENTS.md" target="_blank" rel="noopener">For AI agents</a></li>
