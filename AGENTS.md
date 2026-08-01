@@ -8,7 +8,7 @@ This repo (`axosecurity/ai-skills`) is a curated, open-source collection of **pr
 
 - Each skill lives in `skills/<skill-name>/` as a `SKILL.md` (with YAML frontmatter) plus optional `references/` deep-dive docs.
 - Existing skills: `clerk-org-rbac`, `redis-token-bucket-rate-limiter`, `secure-file-upload`.
-- The public surface of the repo is `README.md` (catalog) and `docs/INSTALLATION.md`. The installer (`scripts/install.sh`) auto-discovers skills from the `skills/` directory — it does **not** need editing when a skill is added.
+- The public surface of the repo is `README.md` (catalog), `docs/INSTALLATION.md`, and the marketing site in `web/` (deployed to GitHub Pages at `ai-skills.axosolaman.online`). The installer (`scripts/install.sh`) auto-discovers skills from the `skills/` directory — it does **not** need editing when a skill is added.
 
 ## Non-Negotiable Rules
 
@@ -16,8 +16,9 @@ This repo (`axosecurity/ai-skills`) is a curated, open-source collection of **pr
 2. **Never commit `.skill` files** — they are gitignored (`*.skill`). They are only an *input* format (zip archives) that gets extracted.
 3. **Skills are security-first, reusable, and project-agnostic** — no hardcoded domain details in `SKILL.md`; put worked examples in `references/`.
 4. **Keep the README catalog in sync** — every skill must be listed. Never add a skill without updating the docs that reference it.
-5. **Do not commit secrets** — check env vars, keys, and tokens stay out of all files.
-6. **Do not commit unless the user explicitly asks.** When committing, use a concise message matching the repo style (see `git log`).
+5. **Keep the `web/` landing page in sync** — every skill must be represented on the marketing site. Never add a skill without adding it to `web/index.html`.
+6. **Do not commit secrets** — check env vars, keys, and tokens stay out of all files.
+7. **Do not commit unless the user explicitly asks.** When committing, use a concise message matching the repo style (see `git log`).
 
 ## Workflow: Adding a New Skill
 
@@ -74,9 +75,21 @@ In `docs/INSTALLATION.md`, update skill enumerations:
 - [ ] Claude Code and opencode manual `cp -r` examples.
 - [ ] Optionally, a trigger example in the "Test with your agent" section.
 
-### 6. Verify before finishing
+### 6. Update the web landing page
 
-- [ ] `git status` shows only intended changes (skill folder + README + docs).
+In `web/index.html`, update the marketing site (deployed to GitHub Pages at `ai-skills.axosolaman.online`):
+
+- [ ] **JSON-LD `ItemList`** — add the new skill as the next `ListItem` (position, name, description, `#<skill-name>` anchor URL).
+- [ ] **Skill cards** — add a `<article class="card" id="<skill-name>">` matching the existing cards' style: `chip` category, `card-stack`, title, description, `card-list` bullets, `trigger` example, and a "View skill →" link to `https://github.com/axosecurity/ai-skills/tree/main/skills/<skill-name>`.
+- [ ] **Footer skills list** — add the new skill link under the "Skills" column.
+- [ ] Keep category chips consistent (`chip-auth`, `chip-api`, etc.); add a new chip class to `web/assets/styles.css` only if the category is new.
+- [ ] No hardcoded secrets or internal URLs in the web page.
+
+> The GitHub Actions workflow (`.github/workflows/pages.yml`) redeploys `web/` automatically on every push to `main`, so no manual deploy is needed.
+
+### 7. Verify before finishing
+
+- [ ] `git status` shows only intended changes (skill folder + README + docs + web).
 - [ ] README links to `skills/<skill-name>/…` resolve to real files.
 - [ ] The installer auto-detects the new skill (it lists every folder under `skills/`):
   ```bash
@@ -84,16 +97,16 @@ In `docs/INSTALLATION.md`, update skill enumerations:
   ```
 - [ ] If you fixed or changed anything beyond the addition (e.g. a bug in `scripts/install.sh`), flag it to the user rather than silently expanding scope.
 
-### 7. Commit and push (only when asked)
+### 8. Commit and push (only when asked)
 
 ```bash
-git add skills/<skill-name> README.md docs/INSTALLATION.md
+git add skills/<skill-name> README.md docs/INSTALLATION.md web/index.html
 git status                                  # review staged files
 git commit -m "Add <skill-name> skill: <one-line summary>"
 git push origin main
 ```
 
-Match the commit style in `git log` (imperative, summarizes what the skill does). Never include the `.skill` archive in the commit.
+Match the commit style in `git log` (imperative, summarizes what the skill does). Never include the `.skill` archive in the commit. The push triggers the Pages workflow, which redeploys `web/` (including the new skill card).
 
 ## README Conventions
 

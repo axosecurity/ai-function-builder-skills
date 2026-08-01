@@ -212,10 +212,20 @@ Then start a new session with your agent and use one of the example prompts abov
 ai-skills/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT
+├── AGENTS.md                          # Governing instructions for AI agents
 ├── scripts/
 │   └── install.sh                     # Cross-tool installer
 ├── docs/
 │   └── INSTALLATION.md                # Detailed per-tool install docs
+├── web/
+│   ├── index.html                     # Marketing landing page (SEO + JSON-LD)
+│   ├── assets/
+│   │   ├── styles.css                 # Landing page styles
+│   │   └── main.js                    # Nav, tabs, scroll-reveal
+│   ├── CNAME                          # Custom domain: ai-skills.axosolaman.online
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── 404.html
 └── skills/
     ├── clerk-org-rbac/
     │   ├── SKILL.md                   # Skill instructions + workflow
