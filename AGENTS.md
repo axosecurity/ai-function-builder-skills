@@ -82,6 +82,7 @@ In `web/index.html`, update the marketing site (deployed to GitHub Pages at `ai-
 - [ ] **JSON-LD `ItemList`** — add the new skill as the next `ListItem` (position, name, description, `#<skill-name>` anchor URL).
 - [ ] **Skill cards** — add a `<article class="card" id="<skill-name>">` matching the existing cards' style: `chip` category, `card-stack`, title, description, `card-list` bullets, `trigger` example, and a "View skill →" link to `https://github.com/axosecurity/ai-function-builder-skills/tree/main/skills/<skill-name>`.
 - [ ] **Footer skills list** — add the new skill link under the "Skills" column.
+- [ ] **`web/sitemap.xml`** — add a `<url>` entry for the new skill's `#<skill-name>` anchor.
 - [ ] Keep category chips consistent (`chip-auth`, `chip-api`, etc.); add a new chip class to `web/assets/styles.css` only if the category is new.
 - [ ] No hardcoded secrets or internal URLs in the web page.
 

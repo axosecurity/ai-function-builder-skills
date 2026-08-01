@@ -1,4 +1,11 @@
+# robots.txt — https://ai-function-builder-skills.axosolaman.online/
+# Allow all crawlers full access; only the 404 page is excluded from indexing.
+
 User-agent: *
 Allow: /
 
+# 404 page is not meant to be indexed
+Disallow: /404.html
+
+# Sitemap location
 Sitemap: https://ai-function-builder-skills.axosolaman.online/sitemap.xml
