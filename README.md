@@ -1,7 +1,7 @@
 # AI Skills for Developers
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![GitHub stars](https://img.shields.io/github/stars/axosecurity/ai-skills?style=social)
+![GitHub stars](https://img.shields.io/github/stars/axosecurity/ai-function-builder-skills?style=social)
 ![Made with Markdown](https://img.shields.io/badge/built%20with-Markdown-orange.svg)
 
 > A curated, open-source collection of **production-ready AI skills** for LLM agents (Claude Code, opencode, Cursor, and other agent-based development tools). Each skill is a reusable, step-by-step instruction pack that turns your AI coding assistant into a specialist for a specific engineering task — from multi-tenant RBAC on Clerk to race-condition-free Redis rate limiting to zero-bandwidth, presigned-URL file uploads.
@@ -130,7 +130,7 @@ cp -r skills/secure-file-upload/* ~/.claude/skills/secure-file-upload/
 1. **Clone this repo:**
 
 ```bash
-git clone https://github.com/axosecurity/ai-skills.git
+git clone https://github.com/axosecurity/ai-function-builder-skills.git
 cd ai-skills
 ```
 
@@ -222,7 +222,7 @@ ai-skills/
 │   ├── assets/
 │   │   ├── styles.css                 # Landing page styles
 │   │   └── main.js                    # Nav, tabs, scroll-reveal
-│   ├── CNAME                          # Custom domain: ai-skills.axosolaman.online
+│   ├── CNAME                          # Custom domain: ai-function-builder-skills.axosolaman.online
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   └── 404.html

@@ -4,11 +4,11 @@ This file is the **main prompt every agent working in this repository must obey*
 
 ## Project Overview
 
-This repo (`axosecurity/ai-skills`) is a curated, open-source collection of **production-ready AI skills** — reusable instruction packs that turn LLM coding agents (Claude Code, opencode, Cursor, etc.) into specialists for specific engineering tasks.
+This repo (`axosecurity/ai-function-builder-skills`) is a curated, open-source collection of **production-ready AI skills** — reusable instruction packs that turn LLM coding agents (Claude Code, opencode, Cursor, etc.) into specialists for specific engineering tasks.
 
 - Each skill lives in `skills/<skill-name>/` as a `SKILL.md` (with YAML frontmatter) plus optional `references/` deep-dive docs.
 - Existing skills: `clerk-org-rbac`, `redis-token-bucket-rate-limiter`, `secure-file-upload`.
-- The public surface of the repo is `README.md` (catalog), `docs/INSTALLATION.md`, and the marketing site in `web/` (deployed to GitHub Pages at `ai-skills.axosolaman.online`). The installer (`scripts/install.sh`) auto-discovers skills from the `skills/` directory — it does **not** need editing when a skill is added.
+- The public surface of the repo is `README.md` (catalog), `docs/INSTALLATION.md`, and the marketing site in `web/` (deployed to GitHub Pages at `ai-function-builder-skills.axosolaman.online`). The installer (`scripts/install.sh`) auto-discovers skills from the `skills/` directory — it does **not** need editing when a skill is added.
 
 ## Non-Negotiable Rules
 
@@ -77,10 +77,10 @@ In `docs/INSTALLATION.md`, update skill enumerations:
 
 ### 6. Update the web landing page
 
-In `web/index.html`, update the marketing site (deployed to GitHub Pages at `ai-skills.axosolaman.online`):
+In `web/index.html`, update the marketing site (deployed to GitHub Pages at `ai-function-builder-skills.axosolaman.online`):
 
 - [ ] **JSON-LD `ItemList`** — add the new skill as the next `ListItem` (position, name, description, `#<skill-name>` anchor URL).
-- [ ] **Skill cards** — add a `<article class="card" id="<skill-name>">` matching the existing cards' style: `chip` category, `card-stack`, title, description, `card-list` bullets, `trigger` example, and a "View skill →" link to `https://github.com/axosecurity/ai-skills/tree/main/skills/<skill-name>`.
+- [ ] **Skill cards** — add a `<article class="card" id="<skill-name>">` matching the existing cards' style: `chip` category, `card-stack`, title, description, `card-list` bullets, `trigger` example, and a "View skill →" link to `https://github.com/axosecurity/ai-function-builder-skills/tree/main/skills/<skill-name>`.
 - [ ] **Footer skills list** — add the new skill link under the "Skills" column.
 - [ ] Keep category chips consistent (`chip-auth`, `chip-api`, etc.); add a new chip class to `web/assets/styles.css` only if the category is new.
 - [ ] No hardcoded secrets or internal URLs in the web page.

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ai-skills.axosolaman.online/sitemap.xml
+Sitemap: https://ai-function-builder-skills.axosolaman.online/sitemap.xml

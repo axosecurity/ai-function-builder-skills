@@ -10,14 +10,14 @@
   <meta name="keywords" content="AI skills, agent skills, Claude Code skills, opencode skills, LLM agent instructions, Clerk RBAC, Redis rate limiter, token bucket, secure file upload, presigned URL, S3, Cloudflare R2">
   <meta name="author" content="axosecurity">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ai-skills.axosolaman.online/">
+  <link rel="canonical" href="https://ai-function-builder-skills.axosolaman.online/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AI Skills for Developers">
   <meta property="og:title" content="AI Skills for Developers — Production-Ready Skills for LLM Coding Agents">
   <meta property="og:description" content="Clerk RBAC, Redis rate limiting, secure file upload. Battle-tested AI skills that make your coding agent consistently good at hard tasks.">
-  <meta property="og:url" content="https://ai-skills.axosolaman.online/">
+  <meta property="og:url" content="https://ai-function-builder-skills.axosolaman.online/">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
@@ -37,8 +37,8 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "AI Skills for Developers",
-    "alternateName": "axosecurity/ai-skills",
-    "url": "https://ai-skills.axosolaman.online/",
+    "alternateName": "axosecurity/ai-function-builder-skills",
+    "url": "https://ai-function-builder-skills.axosolaman.online/",
     "description": "A curated, open-source collection of production-ready AI skills for LLM coding agents (Claude Code, opencode, Cursor).",
     "publisher": {
       "@type": "Organization",
@@ -60,21 +60,21 @@
         "position": 1,
         "name": "Clerk Organization RBAC",
         "description": "Multi-tenant role-based access control built entirely inside Clerk Organizations, with JWT-only authorization.",
-        "url": "https://ai-skills.axosolaman.online/#clerk-org-rbac"
+        "url": "https://ai-function-builder-skills.axosolaman.online/#clerk-org-rbac"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Redis Token Bucket Rate Limiter",
         "description": "A race-condition-free token bucket rate limiter backed by Redis using a single atomic Lua script.",
-        "url": "https://ai-skills.axosolaman.online/#redis-token-bucket-rate-limiter"
+        "url": "https://ai-function-builder-skills.axosolaman.online/#redis-token-bucket-rate-limiter"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Secure File Upload",
         "description": "Zero-server-bandwidth file upload via presigned URLs with a 5-layer security model.",
-        "url": "https://ai-skills.axosolaman.online/#secure-file-upload"
+        "url": "https://ai-function-builder-skills.axosolaman.online/#secure-file-upload"
       }
     ]
   }
@@ -99,7 +99,7 @@
         <li><a href="#why">Why</a></li>
         <li><a href="#install">Install</a></li>
         <li><a href="#contribute">Contribute</a></li>
-        <li><a class="nav-cta" href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav-cta" href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </nav>
   </header>
@@ -119,7 +119,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#skills">Browse skills</a>
-            <a class="btn btn-secondary" href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">Star on GitHub ★</a>
+            <a class="btn btn-secondary" href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">Star on GitHub ★</a>
           </div>
           <ul class="hero-badges">
             <li>✔ Battle-tested in production</li>
@@ -192,7 +192,7 @@ description: Multi-tenant RBAC with
             </ul>
             <div class="card-foot">
               <code class="trigger">"Set up multi-tenant RBAC for my SaaS"</code>
-              <a class="btn-link" href="https://github.com/axosecurity/ai-skills/tree/main/skills/clerk-org-rbac" target="_blank" rel="noopener">View skill →</a>
+              <a class="btn-link" href="https://github.com/axosecurity/ai-function-builder-skills/tree/main/skills/clerk-org-rbac" target="_blank" rel="noopener">View skill →</a>
             </div>
           </article>
 
@@ -215,7 +215,7 @@ description: Multi-tenant RBAC with
             </ul>
             <div class="card-foot">
               <code class="trigger">"Add rate limiting to my /api/payments"</code>
-              <a class="btn-link" href="https://github.com/axosecurity/ai-skills/tree/main/skills/redis-token-bucket-rate-limiter" target="_blank" rel="noopener">View skill →</a>
+              <a class="btn-link" href="https://github.com/axosecurity/ai-function-builder-skills/tree/main/skills/redis-token-bucket-rate-limiter" target="_blank" rel="noopener">View skill →</a>
             </div>
           </article>
 
@@ -237,7 +237,7 @@ description: Multi-tenant RBAC with
             </ul>
             <div class="card-foot">
               <code class="trigger">"Let users upload profile photos to S3"</code>
-              <a class="btn-link" href="https://github.com/axosecurity/ai-skills/tree/main/skills/secure-file-upload" target="_blank" rel="noopener">View skill →</a>
+              <a class="btn-link" href="https://github.com/axosecurity/ai-function-builder-skills/tree/main/skills/secure-file-upload" target="_blank" rel="noopener">View skill →</a>
             </div>
           </article>
 
@@ -301,7 +301,7 @@ description: Multi-tenant RBAC with
         </div>
 
         <div class="tab-panel active" data-panel="claude">
-<pre><code>git clone https://github.com/axosecurity/ai-skills.git
+<pre><code>git clone https://github.com/axosecurity/ai-function-builder-skills.git
 cd ai-skills
 
 <span class="c"># Install all skills</span>
@@ -312,7 +312,7 @@ bash scripts/install.sh --skills "clerk-org-rbac secure-file-upload"</code></pre
         </div>
 
         <div class="tab-panel" data-panel="opencode">
-<pre><code>git clone https://github.com/axosecurity/ai-skills.git
+<pre><code>git clone https://github.com/axosecurity/ai-function-builder-skills.git
 cd ai-skills
 
 <span class="c"># opencode reads ~/.config/opencode/skills/ (or ~/.opencode/skills/)</span>
@@ -323,7 +323,7 @@ cp -r skills/secure-file-upload ~/.config/opencode/skills/</code></pre>
         </div>
 
         <div class="tab-panel" data-panel="any">
-<pre><code>git clone https://github.com/axosecurity/ai-skills.git
+<pre><code>git clone https://github.com/axosecurity/ai-function-builder-skills.git
 cd ai-skills
 
 <span class="c"># Each skill is a folder with a SKILL.md — copy the whole folder
@@ -343,7 +343,7 @@ cp -r skills/clerk-org-rbac ~/.claude/skills/</code></pre>
           <p>Contributions are welcome. Fork the repo, add your skill under <code>skills/&lt;name&gt;/</code> with a <code>SKILL.md</code>, and open a pull request.</p>
         </div>
         <div class="center">
-          <a class="btn btn-primary" href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">Contribute on GitHub</a>
+          <a class="btn btn-primary" href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">Contribute on GitHub</a>
         </div>
       </div>
     </section>
@@ -371,21 +371,21 @@ cp -r skills/clerk-org-rbac ~/.claude/skills/</code></pre>
       <div>
         <h4>Resources</h4>
         <ul>
-          <li><a href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">Repository</a></li>
-          <li><a href="https://github.com/axosecurity/ai-skills/blob/main/docs/INSTALLATION.md" target="_blank" rel="noopener">Installation guide</a></li>
-          <li><a href="https://github.com/axosecurity/ai-skills/blob/main/AGENTS.md" target="_blank" rel="noopener">For AI agents</a></li>
+          <li><a href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">Repository</a></li>
+          <li><a href="https://github.com/axosecurity/ai-function-builder-skills/blob/main/docs/INSTALLATION.md" target="_blank" rel="noopener">Installation guide</a></li>
+          <li><a href="https://github.com/axosecurity/ai-function-builder-skills/blob/main/AGENTS.md" target="_blank" rel="noopener">For AI agents</a></li>
         </ul>
       </div>
       <div>
         <h4>Legal</h4>
         <ul>
-          <li><a href="https://github.com/axosecurity/ai-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
+          <li><a href="https://github.com/axosecurity/ai-function-builder-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
           <li><a href="https://github.com/axosecurity" target="_blank" rel="noopener">axosecurity</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© <span id="year"></span> axosecurity · <a href="https://ai-skills.axosolaman.online/">ai-skills.axosolaman.online</a></p>
+      <p>© <span id="year"></span> axosecurity · <a href="https://ai-function-builder-skills.axosolaman.online/">ai-function-builder-skills.axosolaman.online</a></p>
     </div>
   </footer>
 

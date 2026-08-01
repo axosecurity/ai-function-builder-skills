@@ -32,7 +32,7 @@ The helper script detects which agent tool you use and copies skills into the co
 ### Install everything
 
 ```bash
-git clone https://github.com/axosecurity/ai-skills.git
+git clone https://github.com/axosecurity/ai-function-builder-skills.git
 cd ai-skills
 bash scripts/install.sh --all
 ```
