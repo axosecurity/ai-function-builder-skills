@@ -4,7 +4,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/axosecurity/ai-skills?style=social)
 ![Made with Markdown](https://img.shields.io/badge/built%20with-Markdown-orange.svg)
 
-> A curated, open-source collection of **production-ready AI skills** for LLM agents (Claude Code, opencode, Cursor, and other agent-based development tools). Each skill is a reusable, step-by-step instruction pack that turns your AI coding assistant into a specialist for a specific engineering task — from multi-tenant RBAC on Clerk to race-condition-free Redis rate limiting.
+> A curated, open-source collection of **production-ready AI skills** for LLM agents (Claude Code, opencode, Cursor, and other agent-based development tools). Each skill is a reusable, step-by-step instruction pack that turns your AI coding assistant into a specialist for a specific engineering task — from multi-tenant RBAC on Clerk to race-condition-free Redis rate limiting to zero-bandwidth, presigned-URL file uploads.
 
 ## Table of Contents
 
@@ -13,6 +13,7 @@
 - [Skill Catalog](#skill-catalog)
   - [Clerk Organization RBAC](#1-clerk-organization-rbac)
   - [Redis Token Bucket Rate Limiter](#2-redis-token-bucket-rate-limiter)
+  - [Secure File Upload](#3-secure-file-upload)
 - [Quick Start](#quick-start)
 - [Installation Guide](#installation-guide)
 - [How to Use a Skill](#how-to-use-a-skill)
@@ -96,6 +97,34 @@ cp -r skills/redis-token-bucket-rate-limiter/* ~/.claude/skills/redis-token-buck
 
 ---
 
+### 3. Secure File Upload
+
+**Category:** Backend & API · **Stack:** Framework-agnostic (Next.js, Django, Rails, Go, Laravel, Express, etc.) + S3-compatible storage (S3, Cloudflare R2, Supabase Storage, Firebase, Azure Blob, GCS)
+
+A battle-tested architecture for letting users upload files (avatars, images, documents) **directly to cloud object storage** via presigned URLs — zero server bandwidth, never trusting the client. Client-side compression and EXIF stripping, cache-busting random object keys, and a **5-layer security model**.
+
+**What you get:**
+
+- The **4-phase flow**: client prep → `/upload/request` (presigned PUT URL) → direct upload → `/upload/confirm` (re-verify, then atomic swap)
+- **5-layer security model**: server-side validation, presigned-URL Content-Type/Length locking, HeadObject verification, magic-byte inspection via Range request, and upload-intent tracking with garbage collection
+- Cache-busting object keys that stop CDNs from serving stale avatars after a re-upload
+- Atomic swap that never leaves a user with a broken/missing file (old file deleted only after the new one verifies)
+- Copy-paste SDK samples (AWS SDK v3), magic-byte signature table, DB schema (`users` / `upload_intents` / `audit_logs`), and step-by-step R2/S3 console setup
+- A standalone reference prompt to hand to any AI agent that doesn't have this skill installed
+
+**Key files:** [`skills/secure-file-upload/SKILL.md`](skills/secure-file-upload/SKILL.md) · [`references/architecture.md`](skills/secure-file-upload/references/architecture.md) · [`references/security-model.md`](skills/secure-file-upload/references/security-model.md) · [`references/database-schema.md`](skills/secure-file-upload/references/database-schema.md) · [`references/configuration.md`](skills/secure-file-upload/references/configuration.md) · [`references/reference-prompt.md`](skills/secure-file-upload/references/reference-prompt.md)
+
+**When to use:** Implementing or debugging file/image/avatar/document upload, "upload to S3/R2/Supabase/Firebase/Azure Blob/GCS", presigned URL uploads, "let users upload a photo", "add a file uploader", or "profile picture won't upload right" — even when the phrase "presigned URL" is never said.
+
+**Install:**
+
+```bash
+mkdir -p ~/.claude/skills/secure-file-upload
+cp -r skills/secure-file-upload/* ~/.claude/skills/secure-file-upload/
+```
+
+---
+
 ## Quick Start
 
 1. **Clone this repo:**
@@ -117,6 +146,9 @@ Example prompts that trigger the skills:
 
 # Triggers redis-token-bucket-rate-limiter
 "Add rate limiting to my /api/payments endpoint with a token bucket"
+
+# Triggers secure-file-upload
+"Let users upload profile photos directly to S3 with presigned URLs"
 ```
 
 ---
@@ -140,6 +172,7 @@ Example prompts that trigger the skills:
 mkdir -p ~/.claude/skills
 cp -r skills/clerk-org-rbac ~/.claude/skills/
 cp -r skills/redis-token-bucket-rate-limiter ~/.claude/skills/
+cp -r skills/secure-file-upload ~/.claude/skills/
 ```
 
 ### Install with the helper script
@@ -150,7 +183,7 @@ We include a small installer that detects your agent tool and copies the skills 
 bash scripts/install.sh
 ```
 
-Pass `--skills "clerk-org-rbac redis-token-bucket-rate-limiter"` to install only specific skills, or `--all` (default) for everything.
+Pass `--skills "clerk-org-rbac redis-token-bucket-rate-limiter secure-file-upload"` to install only specific skills, or `--all` (default) for everything.
 
 ### Verify Installation
 
@@ -191,6 +224,14 @@ ai-skills/
     │       └── docentbase-example.md  # Full worked production example
     └── redis-token-bucket-rate-limiter/
         └── SKILL.md                   # Skill instructions + workflow
+    └── secure-file-upload/
+        ├── SKILL.md                   # Skill instructions + workflow
+        └── references/
+            ├── architecture.md        # Sequence diagram + trade-offs
+            ├── security-model.md      # 5-layer security model + SDK samples
+            ├── database-schema.md     # upload_intents state machine + audit logs
+            ├── configuration.md       # R2 / S3 console setup + CORS
+            └── reference-prompt.md    # Standalone prompt for other agents
 ```
 
 ---
@@ -214,4 +255,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-*Keywords: AI skills, agent skills, Claude Code skills, opencode skills, LLM agent instructions, Clerk RBAC, multi-tenant authorization, role-based access control, Next.js SaaS, Redis rate limiter, token bucket, Upstash Redis, API rate limiting, 429 Too Many Requests, developer tooling, open source*
+*Keywords: AI skills, agent skills, Claude Code skills, opencode skills, LLM agent instructions, Clerk RBAC, multi-tenant authorization, role-based access control, Next.js SaaS, Redis rate limiter, token bucket, Upstash Redis, API rate limiting, 429 Too Many Requests, secure file upload, presigned URL, S3, Cloudflare R2, avatar upload, magic bytes, EXIF stripping, zero-bandwidth upload, developer tooling, open source*

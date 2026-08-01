@@ -40,7 +40,7 @@ bash scripts/install.sh --all
 ### Install only specific skills
 
 ```bash
-bash scripts/install.sh --skills "clerk-org-rbac redis-token-bucket-rate-limiter"
+bash scripts/install.sh --skills "clerk-org-rbac redis-token-bucket-rate-limiter secure-file-upload"
 ```
 
 ### Options
@@ -63,6 +63,7 @@ Each skill is a folder containing a `SKILL.md` (and optionally a `references/` s
 mkdir -p ~/.claude/skills
 cp -r skills/clerk-org-rbac ~/.claude/skills/
 cp -r skills/redis-token-bucket-rate-limiter ~/.claude/skills/
+cp -r skills/secure-file-upload ~/.claude/skills/
 ```
 
 ### opencode
@@ -71,6 +72,7 @@ cp -r skills/redis-token-bucket-rate-limiter ~/.claude/skills/
 mkdir -p ~/.config/opencode/skills
 cp -r skills/clerk-org-rbac ~/.config/opencode/skills/
 cp -r skills/redis-token-bucket-rate-limiter ~/.config/opencode/skills/
+cp -r skills/secure-file-upload ~/.config/opencode/skills/
 ```
 
 > Alternatively, `~/.opencode/skills/` also works for opencode.
@@ -136,6 +138,7 @@ Start a new session and describe a task that should trigger the skill, for examp
 
 Your agent should load the `redis-token-bucket-rate-limiter` skill and begin its interview-first workflow.
 
+For example, "Let users upload profile photos directly to S3 with presigned URLs" should load the `secure-file-upload` skill.
 ---
 
 ## Updating Skills
