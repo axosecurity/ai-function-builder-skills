@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>AI Skills for Developers — Production-Ready Skills for Claude Code, opencode & Cursor</title>
+  <meta name="description" content="A curated, open-source collection of production-ready AI skills that turn LLM coding agents into specialists. Clerk RBAC, Redis rate limiting, secure file upload — drop in, and your AI assistant ships battle-tested code every time.">
+  <meta name="keywords" content="AI skills, agent skills, Claude Code skills, opencode skills, LLM agent instructions, Clerk RBAC, Redis rate limiter, token bucket, secure file upload, presigned URL, S3, Cloudflare R2">
+  <meta name="author" content="axosecurity">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ai-skills.axosolaman.online/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Skills for Developers">
+  <meta property="og:title" content="AI Skills for Developers — Production-Ready Skills for LLM Coding Agents">
+  <meta property="og:description" content="Clerk RBAC, Redis rate limiting, secure file upload. Battle-tested AI skills that make your coding agent consistently good at hard tasks.">
+  <meta property="og:url" content="https://ai-skills.axosolaman.online/">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Skills for Developers — Production-Ready Skills for LLM Coding Agents">
+  <meta name="twitter:description" content="Clerk RBAC, Redis rate limiting, secure file upload. Battle-tested AI skills that make your coding agent consistently good at hard tasks.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Structured data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AI Skills for Developers",
+    "alternateName": "axosecurity/ai-skills",
+    "url": "https://ai-skills.axosolaman.online/",
+    "description": "A curated, open-source collection of production-ready AI skills for LLM coding agents (Claude Code, opencode, Cursor).",
+    "publisher": {
+      "@type": "Organization",
+      "name": "axosecurity",
+      "url": "https://github.com/axosecurity"
+    }
+  }
+  </script>
+
+  <!-- Structured data: ItemList of skills -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI Skill Catalog",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Clerk Organization RBAC",
+        "description": "Multi-tenant role-based access control built entirely inside Clerk Organizations, with JWT-only authorization.",
+        "url": "https://ai-skills.axosolaman.online/#clerk-org-rbac"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Redis Token Bucket Rate Limiter",
+        "description": "A race-condition-free token bucket rate limiter backed by Redis using a single atomic Lua script.",
+        "url": "https://ai-skills.axosolaman.online/#redis-token-bucket-rate-limiter"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Secure File Upload",
+        "description": "Zero-server-bandwidth file upload via presigned URLs with a 5-layer security model.",
+        "url": "https://ai-skills.axosolaman.online/#secure-file-upload"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a href="#top" class="brand" aria-label="AI Skills for Developers — home">
+        <span class="brand-mark">A</span>
+        <span class="brand-text">AI&nbsp;Skills</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#why">Why</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#contribute">Contribute</a></li>
+        <li><a class="nav-cta" href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Open source · MIT licensed · Zero lock-in</p>
+          <h1>Production-ready <span class="accent">AI skills</span> for LLM coding agents</h1>
+          <p class="lead">
+            A curated collection of battle-tested instruction packs that turn Claude Code, opencode, and Cursor
+            into specialists — multi-tenant RBAC, race-condition-free rate limiting, and secure file upload,
+            wired up correctly the first time.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#skills">Browse skills</a>
+            <a class="btn btn-secondary" href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">Star on GitHub ★</a>
+          </div>
+          <ul class="hero-badges">
+            <li>✔ Battle-tested in production</li>
+            <li>✔ Security-first by design</li>
+            <li>✔ Works across agents</li>
+          </ul>
+        </div>
+        <div class="hero-code">
+<pre><code><span class="c"># ~/.claude/skills/clerk-org-rbac/SKILL.md</span>
+---
+name: clerk-org-rbac
+description: Multi-tenant RBAC with
+  Clerk Organizations, JWT-only auth
+---
+
+<span class="c"># Ask your agent:</span>
+<span class="k">"Set up multi-tenant RBAC</span>
+<span class="k"> for my Next.js SaaS."</span>
+
+<span class="r">→ Agent loads the skill</span>
+<span class="r">→ Ships the full architecture</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- What are AI skills -->
+    <section class="section" id="what">
+      <div class="container">
+        <div class="section-head">
+          <h2>What are AI skills?</h2>
+          <p>
+            AI skills are structured instruction files — a <code>SKILL.md</code> plus optional reference docs —
+            that you drop into your agent's skill directory. When you ask for something, the agent matches the task
+            to a skill and loads expert-level guidance, architecture decisions, and copy-paste-ready templates.
+          </p>
+          <p class="section-sub">
+            <strong>In short:</strong> skills are how you make your AI assistant <em>consistently good</em> at hard
+            tasks, instead of winging it from scratch every time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills catalog -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skill catalog</h2>
+          <p>Drop-in, framework-agnostic skills covering the hard parts of shipping secure backend systems.</p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card" id="clerk-org-rbac">
+            <div class="card-top">
+              <span class="chip chip-auth">Auth &amp; Authorization</span>
+              <span class="card-stack">Next.js + Clerk</span>
+            </div>
+            <h3>Clerk Organization RBAC</h3>
+            <p>
+              Multi-tenant role-based access control built entirely inside Clerk Organizations — custom roles,
+              custom permissions, and <strong>JWT-only authorization</strong>. No auth database, no per-request
+              Clerk API calls.
+            </p>
+            <ul class="card-list">
+              <li>8-role / 44-permission reference matrix from production</li>
+              <li>Dual gating: <code>Can</code> (roles) vs <code>PlanGate</code> (billing)</li>
+              <li>Backend-first security — frontend is cosmetic</li>
+              <li>Copy-paste <code>useCan()</code>, <code>&lt;PlanGate&gt;</code>, <code>middleware.ts</code></li>
+            </ul>
+            <div class="card-foot">
+              <code class="trigger">"Set up multi-tenant RBAC for my SaaS"</code>
+              <a class="btn-link" href="https://github.com/axosecurity/ai-skills/tree/main/skills/clerk-org-rbac" target="_blank" rel="noopener">View skill →</a>
+            </div>
+          </article>
+
+          <article class="card" id="redis-token-bucket-rate-limiter">
+            <div class="card-top">
+              <span class="chip chip-api">Backend &amp; API</span>
+              <span class="card-stack">Node.js / TS + Redis</span>
+            </div>
+            <h3>Redis Token Bucket Rate Limiter</h3>
+            <p>
+              A production-grade, <strong>race-condition-free</strong> token bucket rate limiter backed by Redis
+              using a single atomic Lua script — with standardized <code>429</code> responses and
+              <code>X-RateLimit-*</code> headers.
+            </p>
+            <ul class="card-list">
+              <li>Refill, check &amp; deduct atomically — no race conditions</li>
+              <li>Works with Upstash, ioredis, node-redis</li>
+              <li>Fail Open / Fail Closed architecture</li>
+              <li>Never trusts spoofable client headers</li>
+            </ul>
+            <div class="card-foot">
+              <code class="trigger">"Add rate limiting to my /api/payments"</code>
+              <a class="btn-link" href="https://github.com/axosecurity/ai-skills/tree/main/skills/redis-token-bucket-rate-limiter" target="_blank" rel="noopener">View skill →</a>
+            </div>
+          </article>
+
+          <article class="card" id="secure-file-upload">
+            <div class="card-top">
+              <span class="chip chip-upload">Backend &amp; API</span>
+              <span class="card-stack">Any stack + S3/R2</span>
+            </div>
+            <h3>Secure File Upload</h3>
+            <p>
+              Zero-server-bandwidth file, image, and avatar upload straight to S3-compatible storage via
+              presigned URLs — with a <strong>5-layer security model</strong> and atomic, cache-busting swaps.
+            </p>
+            <ul class="card-list">
+              <li>Presigned URLs lock Content-Type &amp; Content-Length</li>
+              <li>HeadObject + magic-byte verification (catches renamed .exe)</li>
+              <li>Random object keys — no stale CDN caches</li>
+              <li>Cleanup job for abandoned uploads</li>
+            </ul>
+            <div class="card-foot">
+              <code class="trigger">"Let users upload profile photos to S3"</code>
+              <a class="btn-link" href="https://github.com/axosecurity/ai-skills/tree/main/skills/secure-file-upload" target="_blank" rel="noopener">View skill →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why use these skills?</h2>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-icon">🏆</span>
+            <h3>Battle-tested</h3>
+            <p>Patterns that have shipped to real production products — not toy examples.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🔒</span>
+            <h3>Security-first</h3>
+            <p>Built-in rules stop common foot-guns: frontend-only auth, spoofed headers, non-atomic limits.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">♻️</span>
+            <h3>Reusable</h3>
+            <p>Swap in your domain's roles, modules, and rates — the architecture stays intact.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">💬</span>
+            <h3>Interview-first</h3>
+            <p>Skills ask the right questions before writing code, so the solution fits your constraints.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🧩</span>
+            <h3>Zero lock-in</h3>
+            <p>Works across Claude Code, opencode, Cursor, and other SKILL-format agents.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">📄</span>
+            <h3>Open source</h3>
+            <p>MIT licensed. Use, modify, and redistribute freely in personal and commercial projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section class="section section-alt" id="install">
+      <div class="container">
+        <div class="section-head">
+          <h2>Get started in minutes</h2>
+          <p>Clone the repo and install one or more skills into your agent's skills directory.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Installation tabs">
+          <button class="tab active" data-tab="claude" role="tab" aria-selected="true">Claude Code</button>
+          <button class="tab" data-tab="opencode" role="tab" aria-selected="false">opencode</button>
+          <button class="tab" data-tab="any" role="tab" aria-selected="false">Any tool</button>
+        </div>
+
+        <div class="tab-panel active" data-panel="claude">
+<pre><code>git clone https://github.com/axosecurity/ai-skills.git
+cd ai-skills
+
+<span class="c"># Install all skills</span>
+bash scripts/install.sh --all
+
+<span class="c"># …or just the ones you need</span>
+bash scripts/install.sh --skills "clerk-org-rbac secure-file-upload"</code></pre>
+        </div>
+
+        <div class="tab-panel" data-panel="opencode">
+<pre><code>git clone https://github.com/axosecurity/ai-skills.git
+cd ai-skills
+
+<span class="c"># opencode reads ~/.config/opencode/skills/ (or ~/.opencode/skills/)</span>
+mkdir -p ~/.config/opencode/skills
+cp -r skills/clerk-org-rbac ~/.config/opencode/skills/
+cp -r skills/redis-token-bucket-rate-limiter ~/.config/opencode/skills/
+cp -r skills/secure-file-upload ~/.config/opencode/skills/</code></pre>
+        </div>
+
+        <div class="tab-panel" data-panel="any">
+<pre><code>git clone https://github.com/axosecurity/ai-skills.git
+cd ai-skills
+
+<span class="c"># Each skill is a folder with a SKILL.md — copy the whole folder
+# into your agent's skills directory (~/.claude/skills/, etc.)</span>
+cp -r skills/clerk-org-rbac ~/.claude/skills/</code></pre>
+        </div>
+
+        <p class="install-note">Then start a new session and describe the task — your agent auto-detects and loads the right skill.</p>
+      </div>
+    </section>
+
+    <!-- Contribute -->
+    <section class="section" id="contribute">
+      <div class="container">
+        <div class="section-head">
+          <h2>Have a battle-tested skill to share?</h2>
+          <p>Contributions are welcome. Fork the repo, add your skill under <code>skills/&lt;name&gt;/</code> with a <code>SKILL.md</code>, and open a pull request.</p>
+        </div>
+        <div class="center">
+          <a class="btn btn-primary" href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">Contribute on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="brand">
+          <span class="brand-mark">A</span>
+          <span class="brand-text">AI&nbsp;Skills</span>
+        </a>
+        <p>Production-ready AI skills for LLM coding agents.</p>
+      </div>
+      <div>
+        <h4>Skills</h4>
+        <ul>
+          <li><a href="#clerk-org-rbac">Clerk Organization RBAC</a></li>
+          <li><a href="#redis-token-bucket-rate-limiter">Redis Rate Limiter</a></li>
+          <li><a href="#secure-file-upload">Secure File Upload</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://github.com/axosecurity/ai-skills" target="_blank" rel="noopener">Repository</a></li>
+          <li><a href="https://github.com/axosecurity/ai-skills/blob/main/docs/INSTALLATION.md" target="_blank" rel="noopener">Installation guide</a></li>
+          <li><a href="https://github.com/axosecurity/ai-skills/blob/main/AGENTS.md" target="_blank" rel="noopener">For AI agents</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://github.com/axosecurity/ai-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
+          <li><a href="https://github.com/axosecurity" target="_blank" rel="noopener">axosecurity</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> axosecurity · <a href="https://ai-skills.axosolaman.online/">ai-skills.axosolaman.online</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
