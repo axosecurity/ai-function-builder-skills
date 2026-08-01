@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary SEO -->
-  <title>AI Skills for Developers — Production-Ready Skills for Claude Code, opencode & Cursor</title>
-  <meta name="description" content="A curated, open-source collection of production-ready AI skills that turn LLM coding agents into specialists. Clerk RBAC, Redis rate limiting, secure file upload — drop in, and your AI assistant ships battle-tested code every time.">
-  <meta name="keywords" content="AI skills, agent skills, Claude Code skills, opencode skills, LLM agent instructions, Clerk RBAC, Redis rate limiter, token bucket, secure file upload, presigned URL, S3, Cloudflare R2">
+  <title>AI Function Builder Skills — Stop Wasting Tokens. Ship Production-Grade Features on the First Try</title>
+  <meta name="description" content="Stop wasting tokens. Get secure, production-grade functions and features on the first try with community-built AI skills — file uploads, access control, rate limiting, authentication, and more. Reusable SKILL.md packs for Claude Code, opencode & Cursor.">
+  <meta name="keywords" content="AI skills, AI function builder, agent skills, Claude Code skills, opencode skills, LLM agent instructions, production-grade code, secure code, Clerk RBAC, Redis rate limiter, token bucket, secure file upload, presigned URL, S3, Cloudflare R2, save tokens">
   <meta name="author" content="axosecurity">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ai-function-builder-skills.axosolaman.online/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AI Skills for Developers">
-  <meta property="og:title" content="AI Skills for Developers — Production-Ready Skills for LLM Coding Agents">
-  <meta property="og:description" content="Clerk RBAC, Redis rate limiting, secure file upload. Battle-tested AI skills that make your coding agent consistently good at hard tasks.">
+  <meta property="og:site_name" content="AI Function Builder Skills">
+  <meta property="og:title" content="AI Function Builder Skills — Stop Wasting Tokens. Ship Production-Grade Features on the First Try">
+  <meta property="og:description" content="Secure, perfect, production-grade functions on the first try — with community-built AI skills for file uploads, access control, rate limiting, authentication, and more.">
   <meta property="og:url" content="https://ai-function-builder-skills.axosolaman.online/">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Skills for Developers — Production-Ready Skills for LLM Coding Agents">
-  <meta name="twitter:description" content="Clerk RBAC, Redis rate limiting, secure file upload. Battle-tested AI skills that make your coding agent consistently good at hard tasks.">
+  <meta name="twitter:title" content="AI Function Builder Skills — Stop Wasting Tokens. Ship Production-Grade Features on the First Try">
+  <meta name="twitter:description" content="Secure, perfect, production-grade functions on the first try — with community-built AI skills for file uploads, access control, rate limiting, authentication, and more.">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
@@ -36,10 +36,10 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "AI Skills for Developers",
+    "name": "AI Function Builder Skills",
     "alternateName": "axosecurity/ai-function-builder-skills",
     "url": "https://ai-function-builder-skills.axosolaman.online/",
-    "description": "A curated, open-source collection of production-ready AI skills for LLM coding agents (Claude Code, opencode, Cursor).",
+    "description": "An open, community-driven library of production-ready AI skills and prompts for building secure, production-grade functions with AI coding agents — file uploads, access control, rate limiting, authentication, and more.",
     "publisher": {
       "@type": "Organization",
       "name": "axosecurity",
@@ -87,9 +87,9 @@
   <!-- Header -->
   <header class="site-header">
     <nav class="container nav" aria-label="Main navigation">
-      <a href="#top" class="brand" aria-label="AI Skills for Developers — home">
+      <a href="#top" class="brand" aria-label="AI Function Builder Skills — home">
         <span class="brand-mark">A</span>
-        <span class="brand-text">AI&nbsp;Skills</span>
+        <span class="brand-text">AI&nbsp;Function&nbsp;Builder</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -110,21 +110,23 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Open source · MIT licensed · Zero lock-in</p>
-          <h1>Production-ready <span class="accent">AI skills</span> for LLM coding agents</h1>
+          <p class="eyebrow">Open source · Community-driven · MIT licensed</p>
+          <h1>Stop wasting tokens. Get secure, production-grade functions <span class="accent">on the first try</span>.</h1>
           <p class="lead">
-            A curated collection of battle-tested instruction packs that turn Claude Code, opencode, and Cursor
-            into specialists — multi-tenant RBAC, race-condition-free rate limiting, and secure file upload,
-            wired up correctly the first time.
+            When your AI agent builds without guidance, it starts from zero — burning tokens re-deriving
+            architecture, exploring dead ends, and shipping code that only <em>looks</em> done. AI Function
+            Builder Skills turns hard-won engineering knowledge into reusable <code>SKILL.md</code> packs, so
+            your agent jumps straight to the right, secure, production-grade solution.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#skills">Browse skills</a>
             <a class="btn btn-secondary" href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">Star on GitHub ★</a>
           </div>
           <ul class="hero-badges">
-            <li>✔ Battle-tested in production</li>
-            <li>✔ Security-first by design</li>
-            <li>✔ Works across agents</li>
+            <li>✔ Lower cost</li>
+            <li>✔ Fewer errors</li>
+            <li>✔ Real security</li>
+            <li>✔ Faster delivery</li>
           </ul>
         </div>
         <div class="hero-code">
@@ -145,19 +147,35 @@ description: Multi-tenant RBAC with
       </div>
     </section>
 
-    <!-- What are AI skills -->
+    <!-- The problem & solution -->
     <section class="section" id="what">
       <div class="container">
         <div class="section-head">
-          <h2>What are AI skills?</h2>
+          <h2>The problem: your agent starts from zero</h2>
           <p>
-            AI skills are structured instruction files — a <code>SKILL.md</code> plus optional reference docs —
-            that you drop into your agent's skill directory. When you ask for something, the agent matches the task
-            to a skill and loads expert-level guidance, architecture decisions, and copy-paste-ready templates.
+            When you ask an AI agent to build a file upload, rate limiter, or auth system without any guidance,
+            it doesn't start from expert knowledge — it starts from zero. It burns huge amounts of tokens
+            re-deriving basic architecture, exploring dead ends, and searching for patterns it should already know.
+          </p>
+          <p>
+            Worse, it often gets things wrong in ways that don't show up until production: frontend-only auth
+            checks anyone can bypass, rate limiters with race conditions under real load, file uploads that trust
+            the client instead of verifying on the server. The result is code that <em>looks</em> done but isn't
+            safe — and a token bill that reflects all that wasted exploration.
+          </p>
+        </div>
+        <div class="section-head">
+          <h2>The fix: reusable, battle-tested skills</h2>
+          <p>
+            Each skill in this library is a structured <code>SKILL.md</code> instruction pack for one specific
+            function — the exact architecture, the security model, the edge cases, and copy-paste-ready code
+            templates — written by developers who've already shipped that function to production and hit the
+            mistakes so you don't have to.
           </p>
           <p class="section-sub">
-            <strong>In short:</strong> skills are how you make your AI assistant <em>consistently good</em> at hard
-            tasks, instead of winging it from scratch every time.
+            With a skill loaded, your agent doesn't rediscover best practices from scratch — it jumps straight
+            to the right solution. That means <strong>lower cost</strong>, <strong>fewer errors</strong>,
+            <strong>real security</strong>, and <strong>faster delivery</strong>.
           </p>
         </div>
       </div>
@@ -168,7 +186,7 @@ description: Multi-tenant RBAC with
       <div class="container">
         <div class="section-head">
           <h2>Skill catalog</h2>
-          <p>Drop-in, framework-agnostic skills covering the hard parts of shipping secure backend systems.</p>
+          <p>Community-built, framework-agnostic skills for the hard parts of shipping secure backend systems — correctly, on the first try.</p>
         </div>
 
         <div class="cards">
@@ -250,37 +268,38 @@ description: Multi-tenant RBAC with
       <div class="container">
         <div class="section-head">
           <h2>Why use these skills?</h2>
+          <p>The difference between code that <em>looks</em> done and code that actually ships safely.</p>
         </div>
         <div class="features">
           <div class="feature">
-            <span class="feature-icon">🏆</span>
-            <h3>Battle-tested</h3>
-            <p>Patterns that have shipped to real production products — not toy examples.</p>
+            <span class="feature-icon">💰</span>
+            <h3>Lower cost</h3>
+            <p>Agents spend tokens writing your actual feature, not relearning fundamentals or backtracking from mistakes.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">✅</span>
+            <h3>Fewer errors</h3>
+            <p>Skills encode the failure modes that only show up in production — race conditions, spoofable headers, non-atomic operations — so the agent avoids them upfront.</p>
           </div>
           <div class="feature">
             <span class="feature-icon">🔒</span>
-            <h3>Security-first</h3>
-            <p>Built-in rules stop common foot-guns: frontend-only auth, spoofed headers, non-atomic limits.</p>
+            <h3>Real security, not an afterthought</h3>
+            <p>Every skill bakes in server-side validation, proper authorization boundaries, and a clear-eyed security/resource balance — not security bolted on after the fact.</p>
           </div>
           <div class="feature">
-            <span class="feature-icon">♻️</span>
-            <h3>Reusable</h3>
-            <p>Swap in your domain's roles, modules, and rates — the architecture stays intact.</p>
+            <span class="feature-icon">⚡</span>
+            <h3>Faster delivery</h3>
+            <p>What used to take rounds of trial, review, and fixing now happens correctly on the first pass.</p>
           </div>
           <div class="feature">
-            <span class="feature-icon">💬</span>
-            <h3>Interview-first</h3>
-            <p>Skills ask the right questions before writing code, so the solution fits your constraints.</p>
+            <span class="feature-icon">🏆</span>
+            <h3>Battle-tested</h3>
+            <p>Written by developers who've shipped these functions to production and hit the mistakes so you don't have to.</p>
           </div>
           <div class="feature">
             <span class="feature-icon">🧩</span>
             <h3>Zero lock-in</h3>
             <p>Works across Claude Code, opencode, Cursor, and other SKILL-format agents.</p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">📄</span>
-            <h3>Open source</h3>
-            <p>MIT licensed. Use, modify, and redistribute freely in personal and commercial projects.</p>
           </div>
         </div>
       </div>
@@ -339,8 +358,8 @@ cp -r skills/clerk-org-rbac ~/.claude/skills/</code></pre>
     <section class="section" id="contribute">
       <div class="container">
         <div class="section-head">
-          <h2>Have a battle-tested skill to share?</h2>
-          <p>Contributions are welcome. Fork the repo, add your skill under <code>skills/&lt;name&gt;/</code> with a <code>SKILL.md</code>, and open a pull request.</p>
+          <h2>Built by developers, for developers</h2>
+          <p>This library is open and community-driven. Have a battle-tested skill to share? Fork the repo, add your skill under <code>skills/&lt;name&gt;/</code> with a <code>SKILL.md</code>, and open a pull request.</p>
         </div>
         <div class="center">
           <a class="btn btn-primary" href="https://github.com/axosecurity/ai-function-builder-skills" target="_blank" rel="noopener">Contribute on GitHub</a>
@@ -356,9 +375,9 @@ cp -r skills/clerk-org-rbac ~/.claude/skills/</code></pre>
       <div>
         <a href="#top" class="brand">
           <span class="brand-mark">A</span>
-          <span class="brand-text">AI&nbsp;Skills</span>
+          <span class="brand-text">AI&nbsp;Function&nbsp;Builder</span>
         </a>
-        <p>Production-ready AI skills for LLM coding agents.</p>
+        <p>Community-built AI skills that ship secure, production-grade features on the first try.</p>
       </div>
       <div>
         <h4>Skills</h4>

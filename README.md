@@ -1,10 +1,12 @@
-# AI Skills for Developers
+# AI Function Builder Skills
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![GitHub stars](https://img.shields.io/github/stars/axosecurity/ai-function-builder-skills?style=social)
 ![Made with Markdown](https://img.shields.io/badge/built%20with-Markdown-orange.svg)
 
-> A curated, open-source collection of **production-ready AI skills** for LLM agents (Claude Code, opencode, Cursor, and other agent-based development tools). Each skill is a reusable, step-by-step instruction pack that turns your AI coding assistant into a specialist for a specific engineering task — from multi-tenant RBAC on Clerk to race-condition-free Redis rate limiting to zero-bandwidth, presigned-URL file uploads.
+> **Stop wasting tokens. Get secure, production-grade functions and features on the first try — with community-built AI skills.**
+
+**AI Function Builder Skills** is an open, community-driven library of production-ready AI skills and prompts for building specific, commonly-needed functions with AI coding agents — file uploads, access control, rate limiting, authentication, and more. Each skill is a reusable `SKILL.md` pack that turns your AI coding assistant into a specialist for one engineering task.
 
 ## Table of Contents
 
@@ -27,13 +29,19 @@
 
 AI Skills are structured instruction files (typically a `SKILL.md` with optional reference docs) that you drop into your AI coding agent's skill directory. When you ask your assistant to do something, it matches the task against the skill's description and loads the full instructions — giving it expert-level guidance, battle-tested architecture decisions, and copy-paste-ready code templates.
 
+**The problem:** when you ask an AI agent to build something like a file upload feature without guidance, it doesn't start from expert knowledge — it starts from zero. It burns huge amounts of tokens re-deriving architecture, exploring dead ends, and searching for patterns it should already know. And it often gets things wrong in ways that don't show up until production: frontend-only auth checks anyone can bypass, rate limiters with race conditions under load, uploads that trust the client instead of verifying on the server. Code that *looks* done but isn't safe.
+
+**The fix:** this project turns hard-won engineering knowledge into reusable `SKILL.md` packs. Each skill is a structured, battle-tested instruction set for one specific function — the exact architecture, the security model, the edge cases, and copy-paste-ready code templates — written by developers who've already shipped that function to production. With the skill loaded, your agent jumps straight to the right solution instead of rediscovering best practices from scratch.
+
 **In short:** skills are how you make your AI assistant *consistently good* at hard tasks, instead of winging it from scratch every time.
 
 ## Why Use These Skills?
 
+- **Lower cost** — agents spend tokens writing your actual feature, not relearning fundamentals or backtracking from mistakes.
+- **Fewer errors** — skills encode the failure modes that only show up in production (race conditions, spoofable headers, non-atomic operations), so the agent avoids them upfront.
+- **Real security, not an afterthought** — every skill bakes in a security-first mindset: server-side validation, proper authorization boundaries, and a clear-eyed balance between security and resource efficiency.
+- **Faster delivery** — what used to take multiple rounds of trial, review, and fixing now happens correctly on the first pass.
 - **Battle-tested:** Each skill encodes patterns that have shipped to real production products (e.g. DocentBase, a multi-tenant coaching-center SaaS).
-- **Security-first:** Built-in rules prevent common foot-guns — frontend-only auth checks, spoofable identity headers, and non-atomic rate-limit scripts.
-- **Reusable & project-agnostic:** Swap in your domain's roles, modules, and rates; the architecture stays intact.
 - **Interview-first workflow:** Skills ask the right questions before writing code, so you get a solution that fits your actual constraints.
 - **Zero lock-in:** Works across agent tools that support the SKILL format (Claude Code, opencode, Cursor, etc.).
 
@@ -209,7 +217,7 @@ Then start a new session with your agent and use one of the example prompts abov
 ## Project Structure
 
 ```text
-ai-skills/
+ai-function-builder-skills/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT
 ├── AGENTS.md                          # Governing instructions for AI agents
@@ -265,4 +273,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-*Keywords: AI skills, agent skills, Claude Code skills, opencode skills, LLM agent instructions, Clerk RBAC, multi-tenant authorization, role-based access control, Next.js SaaS, Redis rate limiter, token bucket, Upstash Redis, API rate limiting, 429 Too Many Requests, secure file upload, presigned URL, S3, Cloudflare R2, avatar upload, magic bytes, EXIF stripping, zero-bandwidth upload, developer tooling, open source*
+*Keywords: AI skills, AI function builder, agent skills, Claude Code skills, opencode skills, LLM agent instructions, production-grade code, secure code generation, Clerk RBAC, multi-tenant authorization, role-based access control, Next.js SaaS, Redis rate limiter, token bucket, Upstash Redis, API rate limiting, 429 Too Many Requests, secure file upload, presigned URL, S3, Cloudflare R2, avatar upload, magic bytes, EXIF stripping, zero-bandwidth upload, save tokens, developer tooling, open source*
