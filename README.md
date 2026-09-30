@@ -16,6 +16,7 @@
   - [Clerk Organization RBAC](#1-clerk-organization-rbac)
   - [Redis Token Bucket Rate Limiter](#2-redis-token-bucket-rate-limiter)
   - [Secure File Upload](#3-secure-file-upload)
+  - [Onlook Local Development & Management](#4-onlook-local-development--management)
 - [Quick Start](#quick-start)
 - [Installation Guide](#installation-guide)
 - [How to Use a Skill](#how-to-use-a-skill)
@@ -133,6 +134,33 @@ cp -r skills/secure-file-upload/* ~/.claude/skills/secure-file-upload/
 
 ---
 
+### 4. Onlook Local Development & Management
+
+**Category:** DevTools & Orchestration · **Stack:** Monorepo (Next.js 16 + Bun + Turbopack), Docker / Colima, Supabase CLI (PostgreSQL, Auth, Studio, Mailpit, S3), Drizzle ORM
+
+An autonomous operational blueprint for installing, containerizing, running, debugging, and managing **Onlook** (the open-source visual editor for React and Tailwind CSS) locally without headaches, container mount issues, or broken database schemas.
+
+**What you get:**
+
+- **Colima rootless Docker socket fix**: Resolves macOS virtiofs mount errors (`mkdir .../docker.sock: operation not supported`) autonomously via internal tmpfs binding
+- **Automated multi-tier environment generation**: Populates `apps/web/client/.env` and `packages/db/.env` with extracted Supabase keys and LLM/sandbox tokens
+- **Database synchronization & seeding**: Runs `drizzle-kit push` and seed scripts without interactive hangs
+- **Quick command cheat sheet**: Full matrix mapping every command (`colima start/stop`, `bun backend:start/stop`, `bun db:push`, `bun db:seed`, `bun dev`, `bun run reset`) to where to run it, what it does, and when to use it
+- **5 step-by-step playbooks**: First-time setup, daily morning routine, daily shutdown routine, pulling Git updates, and full database reset
+
+**Key files:** [`skills/onlook-local-dev/SKILL.md`](skills/onlook-local-dev/SKILL.md) · [`skills/onlook-local-dev/README.md`](skills/onlook-local-dev/README.md)
+
+**When to use:** Installing, provisioning, starting, stopping, debugging, or running Onlook locally, troubleshooting Supabase CLI local containers, configuring Onlook environment variables, or executing Drizzle schema migrations for Onlook.
+
+**Install:**
+
+```bash
+mkdir -p ~/.claude/skills/onlook-local-dev
+cp -r skills/onlook-local-dev/* ~/.claude/skills/onlook-local-dev/
+```
+
+---
+
 ## Quick Start
 
 1. **Clone this repo:**
@@ -157,6 +185,9 @@ Example prompts that trigger the skills:
 
 # Triggers secure-file-upload
 "Let users upload profile photos directly to S3 with presigned URLs"
+
+# Triggers onlook-local-dev
+"Set up Onlook locally on my machine and start all services"
 ```
 
 ---
@@ -181,6 +212,7 @@ mkdir -p ~/.claude/skills
 cp -r skills/clerk-org-rbac ~/.claude/skills/
 cp -r skills/redis-token-bucket-rate-limiter ~/.claude/skills/
 cp -r skills/secure-file-upload ~/.claude/skills/
+cp -r skills/onlook-local-dev ~/.claude/skills/
 ```
 
 ### Install with the helper script
@@ -191,7 +223,7 @@ We include a small installer that detects your agent tool and copies the skills 
 bash scripts/install.sh
 ```
 
-Pass `--skills "clerk-org-rbac redis-token-bucket-rate-limiter secure-file-upload"` to install only specific skills, or `--all` (default) for everything.
+Pass `--skills "clerk-org-rbac redis-token-bucket-rate-limiter secure-file-upload onlook-local-dev"` to install only specific skills, or `--all` (default) for everything.
 
 ### Verify Installation
 
@@ -250,6 +282,9 @@ ai-function-builder-skills/
             ├── database-schema.md     # upload_intents state machine + audit logs
             ├── configuration.md       # R2 / S3 console setup + CORS
             └── reference-prompt.md    # Standalone prompt for other agents
+    └── onlook-local-dev/
+        ├── SKILL.md                   # Skill instructions + command cheatsheet + playbooks
+        └── README.md                  # Deep-dive use cases, failure modes, & troubleshooting
 ```
 
 ---
@@ -273,4 +308,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-*Keywords: AI skills, AI function builder, agent skills, Claude Code skills, opencode skills, LLM agent instructions, production-grade code, secure code generation, Clerk RBAC, multi-tenant authorization, role-based access control, Next.js SaaS, Redis rate limiter, token bucket, Upstash Redis, API rate limiting, 429 Too Many Requests, secure file upload, presigned URL, S3, Cloudflare R2, avatar upload, magic bytes, EXIF stripping, zero-bandwidth upload, save tokens, developer tooling, open source*
+*Keywords: AI skills, AI function builder, agent skills, Claude Code skills, opencode skills, LLM agent instructions, production-grade code, secure code generation, Clerk RBAC, multi-tenant authorization, role-based access control, Next.js SaaS, Redis rate limiter, token bucket, Upstash Redis, API rate limiting, 429 Too Many Requests, secure file upload, presigned URL, S3, Cloudflare R2, avatar upload, magic bytes, EXIF stripping, zero-bandwidth upload, Onlook, Onlook visual editor, Colima Docker setup, Supabase local development, Drizzle ORM push, React Tailwind visual editor, save tokens, developer tooling, open source*

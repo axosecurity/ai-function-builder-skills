@@ -59,8 +59,10 @@ detect_target() {
 TARGET="$(detect_target)"
 mkdir -p "$TARGET"
 
-# --- select skills ----------------------------------------------------------
-mapfile -t AVAILABLE < <(find "$SKILLS_DIR" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+AVAILABLE=()
+while IFS= read -r dir; do
+  AVAILABLE+=("$dir")
+done < <(find "$SKILLS_DIR" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
 
 if [[ "$MODE" == "some" ]]; then
   TO_INSTALL=()

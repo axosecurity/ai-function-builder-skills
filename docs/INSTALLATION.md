@@ -40,7 +40,7 @@ bash scripts/install.sh --all
 ### Install only specific skills
 
 ```bash
-bash scripts/install.sh --skills "clerk-org-rbac redis-token-bucket-rate-limiter secure-file-upload"
+bash scripts/install.sh --skills "clerk-org-rbac redis-token-bucket-rate-limiter secure-file-upload onlook-local-dev"
 ```
 
 ### Options
@@ -64,6 +64,7 @@ mkdir -p ~/.claude/skills
 cp -r skills/clerk-org-rbac ~/.claude/skills/
 cp -r skills/redis-token-bucket-rate-limiter ~/.claude/skills/
 cp -r skills/secure-file-upload ~/.claude/skills/
+cp -r skills/onlook-local-dev ~/.claude/skills/
 ```
 
 ### opencode
@@ -73,6 +74,7 @@ mkdir -p ~/.config/opencode/skills
 cp -r skills/clerk-org-rbac ~/.config/opencode/skills/
 cp -r skills/redis-token-bucket-rate-limiter ~/.config/opencode/skills/
 cp -r skills/secure-file-upload ~/.config/opencode/skills/
+cp -r skills/onlook-local-dev ~/.config/opencode/skills/
 ```
 
 > Alternatively, `~/.opencode/skills/` also works for opencode.
